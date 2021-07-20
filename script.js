@@ -67,6 +67,7 @@ BUGS:
     - 3) press play button, then press pause button
     - result: instead of pausing, playback starts from beginning again. Sometimes, playback will continue indefinitely, while in other cases, playback will stop after several cycles.
     - sometimes, step 1 is not necessary to recreate the bug
+    - adjusting the tempo slider during playback seems to fix the bug
   - able to recreate on all devices, browsers tested
 - Playing a note on click will randomly stop working.
 - the issue where people could try to play samples before they were fully loaded was momentarily solved, but when we implemented volume sliders, it broke again...
