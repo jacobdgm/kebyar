@@ -1,0 +1,33 @@
+Testing on iPhone SE 2 - 14.4.2:
+  Safari:
+    Tapping on the grid works, and triggers sounds.
+    Playback generally works
+      There's a BUG where clicking the Pause button will not pause Playback
+        steps to recreate:
+        after loading, press play, then press pause
+        adjust the tempo
+        press play, then press pause. Playback continues.
+
+
+Testing on iPad (8th generation) - 14.6:
+  Safari:
+    Tapping on the grid works, and triggers sounds.
+    Playback generally works
+      Except there's the same BUG as on iPhone, as above
+
+
+Testing on Mac Mini (big sur):
+  Google Chrome:
+    Clicking on the grid works, but does not trigger sounds (except for kajar)
+    Playback generally works
+      Except same BUG as on iphone, as above
+
+  Safari:
+    Tapping on the grid works, and triggers sounds.
+    Playback generally works
+      Except same BUG as on iphone, as above
+
+  Firefox:
+    Tapping on the grid does not work
+    Playback generally works
+      Except same BUG as on iphone, as above
