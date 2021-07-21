@@ -58,6 +58,7 @@ TODO:
 - save and load patterns?
   - would be not that difficult to save into a json file, right? all we need to save is the state of grid.grid and grid.kajarRow
 - export audio?
+- update title in html
 
 BUGS:
 - when tempo is adjusted while playback is paused, play/pause button breaks
@@ -68,7 +69,9 @@ BUGS:
     - result: instead of pausing, playback starts from beginning again. Sometimes, playback will continue indefinitely, while in other cases, playback will stop after several cycles.
     - sometimes, step 1 is not necessary to recreate the bug
     - adjusting the tempo slider during playback seems to fix the bug
+        - in some cases. I found instances testing on my windows/linux machines where changing the tempo during playback doesn't resolve the issue.
   - able to recreate on all devices, browsers tested
+  - on some devices (particularly old/laggy ones), play/pause seem to become flipped. I think it might be a matter of properly checking what the value of playLoop is, rather than just saying playLoop = !playLoop
 - Playing a note on click will randomly stop working.
 - the issue where people could try to play samples before they were fully loaded was momentarily solved, but when we implemented volume sliders, it broke again...
   - things that might be helpful for fixing this: tonejs [Buffer](https://tonejs.github.io/docs/r13/Buffer) and [Buffers](https://tonejs.github.io/docs/r13/Buffers)
