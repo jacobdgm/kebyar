@@ -31,3 +31,23 @@ Testing on Mac Mini (big sur):
     Tapping on the grid does not work
     Playback generally works
       Except same BUG as on iphone, as above
+
+
+Testing on Acer laptop running Lubuntu:
+    Firefox:
+        clicking on grid does not work
+        Playback generally works (though it's irregular)
+            Same bug as on iphone, above
+
+
+Testing on Acer laptop running Windows:
+    Firefox:
+        clicking on grid doesn't work
+        Playback generally works, but it's irregular
+            same bug as on iphone
+
+    Microsoft Edge:
+        clicking on grid works
+        playback generally works, not observing the same irregularity as in firefox
+            similar bug as on iphone
+
