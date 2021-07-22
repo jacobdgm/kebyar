@@ -126,33 +126,22 @@ function initializeSamples() {
     return new Tone.Gain(1).connect(pan)
   })
 
-  let _remainingCount = names.length + 1; // +1 for kajar sample
-  console.log("_remainingCount:", _remainingCount)
-  function checkWhetherLoaded () {
-    _remainingCount -= 1; // 1) read the variable 2) subtract one 3) write back to the variable
-    console.log(name, "loaded. _remainingCount:", _remainingCount) // at some point, fix this so name prints
-    if (_remainingCount == 0) {
-      // hacky solution :)
-      // TODO: possibly try Tone.Buffer.on("load") instead.
-      let onLoaded = _ => {
-        playButton.removeAttribute('disabled');
-        playButton.html('Play');
-        loaded = true;
-      };
-      setTimeout(onLoaded, 2000);
-    }
-  }
-
   // sample[i] -> gain[i] ->  panner[i] -> env[i] -> speakers
   let samplePlayers = names.map( (name, idx) => {
     const gain = gainNodes[idx];
-    let result = new Tone.Player(name, checkWhetherLoaded);
+    let result = new Tone.Player(name);
     result.connect(gain);
     return new Tone.Player(name).connect(gain);
   });
 
   let kajarGainNode = new Tone.Gain(1).toDestination()
-  let kajarSample = new Tone.Player('samples/kempli.wav', checkWhetherLoaded).connect(kajarGainNode)
+  let kajarSample = new Tone.Player('samples/kempli.wav').connect(kajarGainNode)
+
+  Tone.loaded().then(() => {
+    playButton.removeAttribute('disabled');
+    playButton.html('Play');
+    loaded = true;
+  });
 
   samples = {
     "gangsa": samplePlayers,
