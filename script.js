@@ -330,6 +330,8 @@ function touchStarted() {
     loop = new Tone.Loop(onOnset, "8n"); // .start(0);
     Tone.start();
     Tone.Transport.start();
+    loop.mute = true;
+    loop.start(0);
   }
 
   let x = mouseX;
@@ -365,11 +367,12 @@ function toggleCurrentlyPlaying() {
     loop = new Tone.Loop(onOnset, "8n"); // .start(0);
     Tone.start();
     Tone.Transport.start();
+    loop.start(0);
   }
 
   // playLoop ? Tone.Transport.start() : Tone.Transport.stop();
   let t = Tone.Transport.seconds;
-  playLoop ? loop.start(t) : loop.stop(t);
+  loop.mute = !playLoop;
   if (!playLoop) currentBeat = -1;
 }
 
