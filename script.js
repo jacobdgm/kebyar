@@ -450,6 +450,9 @@ function setup() {
   background(255);
 
   grid = new Grid();
+  if (platform.name === "Firefox") {
+    alert("Note: Firefox is not currently supported. Supported browsers are Chrome, Safari, and Edge.");
+  }
 }
 
 function draw() {
